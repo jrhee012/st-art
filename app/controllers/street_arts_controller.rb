@@ -7,6 +7,15 @@ class StreetArtsController < ApplicationController
     @street_arts = StreetArt.all
   end
 
+  def like
+    type = params[:type]
+    if type == "like"
+      current_user.likes << @street_art
+      redirect_to :back, notice: 'Liked'
+    else
+      redirect_to :back, notice: 'Nothing happend.'
+    end
+  end
   # GET /street_arts/1
   # GET /street_arts/1.json
   def show

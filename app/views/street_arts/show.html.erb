@@ -36,5 +36,9 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR1YVwH0oFBINVt8v5QS_j4TF68oTAVH0&callback=initMap">
     </script>
 
+<% if current_user %>
+  <%= link_to "Like",   like_street_art_path(@street_art, type: "like"), method: :put %>
+<% end %>
+
 <%= link_to 'Edit', edit_street_art_path(@street_art) %> |
 <%= link_to 'Back', street_arts_path %>

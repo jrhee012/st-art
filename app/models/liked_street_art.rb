@@ -1,0 +1,4 @@
+class LikedStreetArt < ApplicationRecord
+  belongs_to :user
+  belongs_to :street_art
+end
