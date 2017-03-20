@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20170317194336) do
     t.integer  "street_art_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["street_art_id"], name: "index_liked_street_arts_on_street_art_id", using: :btree
+    t.index ["user_id"], name: "index_liked_street_arts_on_user_id", using: :btree
   end
 
   create_table "likes", force: :cascade do |t|

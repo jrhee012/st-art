@@ -10,6 +10,7 @@ class StreetArtsController < ApplicationController
   def like
     type = params[:type]
     if type == "like"
+      current_user.likes << @street_art
       redirect_to :back, notice: 'Liked'
     else
       redirect_to :back, notice: 'Nothing happend.'
